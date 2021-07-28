@@ -1,0 +1,32 @@
+class Food {
+constructor() {
+this.image= loadImage ("images/Milk.png")
+this.foodStock=0
+this.lastFed=0
+}
+
+getFoodStock(){
+    return this.foodStock
+}
+updateFoodStock(foodStock){
+    this.foodStock= foodStock
+}
+deductFood(){
+    this.foodStock -= 1
+}
+display(){
+    var x=80
+    var y=100
+    imageMode(CENTER)
+   image(this.image, 300, 200, 70,70) 
+
+   for (var i =0; i<this.foodStock; i++){
+       if(i%10===0){
+           x=80
+           y=y+50
+       }
+       image(this.image, x, 50, 50,50)
+       x=x+30
+   }
+}
+}
